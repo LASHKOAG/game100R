@@ -35,6 +35,17 @@ f.write(str(argumentFromUser)) #writing data in file
 #closing file
 f.close()
 
+#with open("/etc/default/grub", "w") as tw:
+#        tw.write(content)
 
 randomNumber = random.randint(0, 100)
 print(f"random number from computer: {randomNumber}")
+# random.randint(0, 1024)
+#print(random.randint(0, 1024))
+
+
+try:
+    with open("/etc/default/grub") as tmp_var:
+        content = tmp_var.read()
+except FileNotFoundError:
+    content = '<<< NOT FOUND >>>'
