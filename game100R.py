@@ -40,3 +40,10 @@ f.close()
 
 # random.randint(0, 1024)
 #print(random.randint(0, 1024))
+
+
+try:
+    with open("/etc/default/grub") as tmp_var:
+        content = tmp_var.read()
+except FileNotFoundError:
+    content = '<<< NOT FOUND >>>'
