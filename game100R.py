@@ -29,8 +29,9 @@ print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 
 #for test
 #numberFromUser = int(input("Input your number>")) #input number
-f = open("database.txt", "w") #open file
+f = open("database.txt", 'a') #open file
 f.write(str(argumentFromUser)) #writing data in file
+f.write("\n") #new line
 
 #closing file
 f.close()
@@ -43,7 +44,10 @@ print(f"random number from computer: {randomNumber}")
 
 
 try:
-    with open("/etc/default/grub") as tmp_var:
-        content = tmp_var.read()
+    with open("./database.txt") as tmp_var:
+        contentDataBase = tmp_var.read()
 except FileNotFoundError:
-    content = '<<< NOT FOUND >>>'
+    contentDataBase = '<<< NOT FOUND >>>'
+
+#test logs
+print(f"Data from file (contentDataBase): {contentDataBase}")
