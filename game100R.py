@@ -35,5 +35,8 @@ f.write(str(numberFromUser)) #writing data in file
 #closing file
 f.close()
 
+#with open("/etc/default/grub", "w") as tw:
+#        tw.write(content)
+
 # random.randint(0, 1024)
 #print(random.randint(0, 1024))
