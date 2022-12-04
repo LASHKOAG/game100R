@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import random
 
 #get argv from user
 import sys
@@ -20,17 +21,18 @@ if len(sys.argv) == 1:
     print("WROND INPUT DATA. Try next with argument")
     exit()
 
-    
+
 argumentFromUser = sys.argv[1]
 print(f"argumentFromUser: {argumentFromUser}")
 print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 #--------------------------------------------------------------
 
-
+#for test
 #numberFromUser = int(input("Input your number>")) #input number
-numberFromUser = 0
 f = open("database.txt", "w") #open file
-f.write(str(numberFromUser)) #writing data in file
+f.write(str(argumentFromUser)) #writing data in file
 
 #closing file
 f.close()
+
+
