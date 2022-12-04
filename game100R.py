@@ -14,11 +14,21 @@ for i in range(len(sys.argv)):
         print ("Program name: %s" % sys.argv[0])
     else:
         print("%d. argument: %s" % (i, sys.argv[i]))
-		
+
+
+if len(sys.argv) == 1:
+    print("WROND INPUT DATA. Try next with argument")
+    exit()
+
+    
+argumentFromUser = sys.argv[1]
+print(f"argumentFromUser: {argumentFromUser}")
+print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 #--------------------------------------------------------------
 
 
-numberFromUser = int(input("Input your number>")) #input number
+#numberFromUser = int(input("Input your number>")) #input number
+numberFromUser = 0
 f = open("database.txt", "w") #open file
 f.write(str(numberFromUser)) #writing data in file
 
