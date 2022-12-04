@@ -36,3 +36,5 @@ f.write(str(argumentFromUser)) #writing data in file
 f.close()
 
 
+# random.randint(0, 1024)
+#print(random.randint(0, 1024))
