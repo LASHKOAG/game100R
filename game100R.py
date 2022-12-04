@@ -40,8 +40,6 @@ f.close()
 
 randomNumber = random.randint(0, 100)
 print(f"random number from computer: {randomNumber}")
-# random.randint(0, 1024)
-#print(random.randint(0, 1024))
 
 
 try:
