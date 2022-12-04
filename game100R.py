@@ -36,5 +36,5 @@ f.write(str(argumentFromUser)) #writing data in file
 f.close()
 
 
-# random.randint(0, 1024)
-#print(random.randint(0, 1024))
+randomNumber = random.randint(0, 100)
+print(f"random number from computer: {randomNumber}")
