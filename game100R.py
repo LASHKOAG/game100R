@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
 
 
-numberFromUser = int(input("Input your number>")) #input number
-f = open("database.txt", "w") #open file
-f.write(str(numberFromUser)) #writing data in file
-
-#closing file
-f.close()
-
 #get argv from user
 import sys
 
@@ -23,3 +16,11 @@ for i in range(len(sys.argv)):
         print("%d. argument: %s" % (i, sys.argv[i]))
 		
 #--------------------------------------------------------------
+
+
+numberFromUser = int(input("Input your number>")) #input number
+f = open("database.txt", "w") #open file
+f.write(str(numberFromUser)) #writing data in file
+
+#closing file
+f.close()
