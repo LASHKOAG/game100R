@@ -3,22 +3,7 @@
 import random
 
 #get argv from user
-import os
 import sys
-
-filename = "./database.txt"
-
-#function for write data in file
-def writeDataInFile(_filename, data):
-    if os.path.exists(_filename):
-        f = open(_filename, 'a')
-        f.write(str(data))
-        f.write("\n")
-
-        #closing file
-        f.close()
-    else:
-        print("WARNING:file not exists")
 
 # название файла
 print(sys.argv)
@@ -42,12 +27,13 @@ print(f"argumentFromUser: {argumentFromUser}")
 print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 #--------------------------------------------------------------
 
-# #for test
-# #numberFromUser = int(input("Input your number>")) #input number
+#for test
+#numberFromUser = int(input("Input your number>")) #input number
+f = open("database.txt", "w") #open file
+f.write(str(argumentFromUser)) #writing data in file
 
-
-writeDataInFile(filename, argumentFromUser)
-
+#closing file
+f.close()
 
 #with open("/etc/default/grub", "w") as tw:
 #        tw.write(content)
@@ -57,10 +43,7 @@ print(f"random number from computer: {randomNumber}")
 
 
 try:
-    with open("./database.txt") as tmp_var:
-        contentDataBase = tmp_var.read()
+    with open("/etc/default/grub") as tmp_var:
+        content = tmp_var.read()
 except FileNotFoundError:
-    contentDataBase = '<<< NOT FOUND >>>'
-
-#test logs
-print(f"Data from file (contentDataBase): {contentDataBase}")
+    content = '<<< NOT FOUND >>>'
