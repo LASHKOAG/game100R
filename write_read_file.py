@@ -1,6 +1,6 @@
 import os
 
-
+#create file
 #function for write data in file
 def writeDataInFile(_filename, data):
     if os.path.exists(_filename):
