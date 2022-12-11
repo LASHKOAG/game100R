@@ -20,6 +20,17 @@ def writeDataInFile(_filename, data):
     else:
         print("WARNING:file not exists")
 
+
+#funcion for read file
+def readDataFromFile(_filename):
+    try:
+        with open(_filename) as tmp_var:
+            contentDataBase = tmp_var.read()
+    except FileNotFoundError:
+        contentDataBase = '<<< NOT FOUND >>>'
+    return contentDataBase
+
+
 # название файла
 print(sys.argv)
 
@@ -48,6 +59,8 @@ print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 
 writeDataInFile(filename, argumentFromUser)
 
+databaseContent = readDataFromFile(filename)
+
 
 #with open("/etc/default/grub", "w") as tw:
 #        tw.write(content)
@@ -56,11 +69,7 @@ randomNumber = random.randint(0, 100)
 print(f"random number from computer: {randomNumber}")
 
 
-try:
-    with open("./database.txt") as tmp_var:
-        contentDataBase = tmp_var.read()
-except FileNotFoundError:
-    contentDataBase = '<<< NOT FOUND >>>'
+
 
 #test logs
-print(f"Data from file (contentDataBase): {contentDataBase}")
+print(f"Data from file (contentDataBase): {databaseContent}")
