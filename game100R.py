@@ -3,7 +3,22 @@
 import random
 
 #get argv from user
+import os
 import sys
+
+filename = "./database.txt"
+
+#function for write data in file
+def writeDataInFile(_filename, data):
+    if os.path.exists(_filename):
+        f = open(_filename, 'a')
+        f.write(str(data))
+        f.write("\n")
+
+        #closing file
+        f.close()
+    else:
+        print("WARNING:file not exists")
 
 # название файла
 print(sys.argv)
@@ -27,14 +42,12 @@ print(f"argumentFromUser: {argumentFromUser}")
 print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 #--------------------------------------------------------------
 
-#for test
-#numberFromUser = int(input("Input your number>")) #input number
-f = open("database.txt", 'a') #open file
-f.write(str(argumentFromUser)) #writing data in file
-f.write("\n") #new line
+# #for test
+# #numberFromUser = int(input("Input your number>")) #input number
 
-#closing file
-f.close()
+
+writeDataInFile(filename, argumentFromUser)
+
 
 #with open("/etc/default/grub", "w") as tw:
 #        tw.write(content)
