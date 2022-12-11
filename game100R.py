@@ -1,38 +1,15 @@
 #!/usr/bin/env python3
-
+import write_read_file as wrfile
 import random
-import os
 #get argv from user
 import sys
 
+
 filename = "./database.txt"
-
-#function for write data in file
-def writeDataInFile(_filename, data):
-    if os.path.exists(_filename):
-        f = open(_filename, 'a')
-        f.write(str(data))
-        f.write("\n")
-
-        #closing file
-        f.close()
-    else:
-        print("WARNING:file not exists")
-
-
-#funcion for read file
-def readDataFromFile(_filename):
-    try:
-        with open(_filename) as tmp_var:
-            contentDataBase = tmp_var.read()
-    except FileNotFoundError:
-        contentDataBase = '<<< NOT FOUND >>>'
-    return contentDataBase
 
 
 # название файла
 print(sys.argv)
-
 print ("len(sys.argv) = %d" % len(sys.argv))
 
 for i in range(len(sys.argv)):
@@ -54,10 +31,9 @@ print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 
 #for test
 #numberFromUser = int(input("Input your number>")) #input number
-f = open("database.txt", "w") #open file
-f.write(str(argumentFromUser)) #writing data in file
+wrfile.writeDataInFile(filename, argumentFromUser)
 
-databaseContent = readDataFromFile(filename)
+databaseContent = wrfile.readDataFromFile(filename)
 
 
 #with open("/etc/default/grub", "w") as tw:
@@ -71,3 +47,7 @@ print(f"random number from computer: {randomNumber}")
 
 #test logs
 print(f"Data from file (contentDataBase): {databaseContent}")
+
+
+# filename = "./111.txt"
+# wrfile.deleteFile(filename)
