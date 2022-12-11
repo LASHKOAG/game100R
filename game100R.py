@@ -3,7 +3,6 @@
 import random
 
 #get argv from user
-import os
 import sys
 
 filename = "./database.txt"
@@ -53,11 +52,10 @@ print(f"argumentFromUser: {argumentFromUser}")
 print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 #--------------------------------------------------------------
 
-# #for test
-# #numberFromUser = int(input("Input your number>")) #input number
-
-
-writeDataInFile(filename, argumentFromUser)
+#for test
+#numberFromUser = int(input("Input your number>")) #input number
+f = open("database.txt", "w") #open file
+f.write(str(argumentFromUser)) #writing data in file
 
 databaseContent = readDataFromFile(filename)
 
