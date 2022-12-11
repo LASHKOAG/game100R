@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import random
-
+import os
 #get argv from user
 import sys
 
