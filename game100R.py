@@ -29,6 +29,40 @@ print(f"argumentFromUser: {argumentFromUser}")
 print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 #--------------------------------------------------------------
 
+
+
+'''
+f.open("./handlerError.txt")
+
+f.open("./handlerError.txt")
+
+f.open("./sfsdfs.txt")
+
+f.open("./dhdh.txt")
+'''
+databaseContent2 = wrfile.readDataFromFile(filename)
+print("-------1--")
+print(type(databaseContent2))
+
+listdata = []
+
+# listdata = databaseContent2.split("\n")
+
+# print("-------2--")
+# print(listdata)
+# print(len(listdata[0]))
+
+# listdata = databaseContent2.splitlines()
+listdata = databaseContent2.split("\n")
+
+listdataclear = []
+
+for i in range(0, len(listdata)-1):
+    tmp_list = listdata[i].split("\n")
+    listdataclear.append(tmp_list[0])
+
+# exit()
+
 #for test
 #numberFromUser = int(input("Input your number>")) #input number
 wrfile.writeDataInFile(filename, argumentFromUser)
