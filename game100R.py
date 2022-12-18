@@ -12,13 +12,16 @@ def check_valid_input_data():
         print("WRONG INPUT DATA. Try next with argument")
         exit()
 
+
 def check_argument_in_range(_argumentFromUser):
     if int(_argumentFromUser) > 100:
         print("Argument is very big. Max 100")
         exit()
+
     if int(_argumentFromUser) < 0:
         print("Argument is very small. Min 0")
         exit()
+
 
 def check_exist_argument_from_user(_listdataclear):
     for i in range(len(_listdataclear)):
@@ -30,7 +33,6 @@ check_valid_input_data()
 
 argumentFromUser = sys.argv[1]
 print(f"argumentFromUser: {argumentFromUser}")
-
 
 
 
