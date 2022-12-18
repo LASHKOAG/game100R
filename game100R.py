@@ -12,11 +12,29 @@ def check_valid_input_data():
         print("WRONG INPUT DATA. Try next with argument")
         exit()
 
+def check_argument_in_range(_argumentFromUser):
+    if int(_argumentFromUser) > 100:
+        print("Argument is very big. Max 100")
+        exit()
+    if int(_argumentFromUser) < 0:
+        print("Argument is very small. Min 0")
+        exit()
+
+def check_exist_argument_from_user(_listdataclear):
+    for i in range(len(_listdataclear)):
+        if argumentFromUser == _listdataclear[i]:
+            print("Game over, number exists yet, make new attempt")
+            exit()
 
 check_valid_input_data()
 
 argumentFromUser = sys.argv[1]
 print(f"argumentFromUser: {argumentFromUser}")
+
+
+
+
+check_argument_in_range(argumentFromUser)
 #--------------------------------------------------------------
 
 
@@ -31,10 +49,7 @@ for i in range(0, len(listdata)-1):
     listdataclear.append(tmp_list[0])
 
 
-for i in range(len(listdataclear)):
-    if argumentFromUser == listdataclear[i]:
-        print("Game over, number exists yet, make new attempt")
-        exit()
+check_exist_argument_from_user(listdataclear)
 
 randomNumber = random.randint(0, 100)
 print(f"random number from computer: {randomNumber}")
