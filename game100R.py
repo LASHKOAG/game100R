@@ -7,22 +7,13 @@ import sys
 
 filename = "./database.txt"
 
-
-# название файла
-print(sys.argv)
-print ("len(sys.argv) = %d" % len(sys.argv))
-
-for i in range(len(sys.argv)):
-    if i == 0:
-        print ("Program name: %s" % sys.argv[0])
-    else:
-        print("%d. argument: %s" % (i, sys.argv[i]))
+def check_valid_input_data():
+    if len(sys.argv) == 1:
+        print("WROND INPUT DATA. Try next with argument")
+        exit()
 
 
-if len(sys.argv) == 1:
-    print("WROND INPUT DATA. Try next with argument")
-    exit()
-
+check_valid_input_data()
 
 argumentFromUser = sys.argv[1]
 print(f"argumentFromUser: {argumentFromUser}")
@@ -30,30 +21,9 @@ print("type of  varriable argumentFromUser: " + str(type(argumentFromUser)))
 #--------------------------------------------------------------
 
 
-
-'''
-f.open("./handlerError.txt")
-
-f.open("./handlerError.txt")
-
-f.open("./sfsdfs.txt")
-
-f.open("./dhdh.txt")
-'''
-databaseContent2 = wrfile.readDataFromFile(filename)
-print("-------1--")
-print(type(databaseContent2))
-
+databaseContent = wrfile.readDataFromFile(filename)
 listdata = []
-
-# listdata = databaseContent2.split("\n")
-
-# print("-------2--")
-# print(listdata)
-# print(len(listdata[0]))
-
-# listdata = databaseContent2.splitlines()
-listdata = databaseContent2.split("\n")
+listdata = databaseContent.split("\n")
 
 listdataclear = []
 
@@ -61,7 +31,21 @@ for i in range(0, len(listdata)-1):
     tmp_list = listdata[i].split("\n")
     listdataclear.append(tmp_list[0])
 
-# exit()
+
+for i in range(len(listdataclear)):
+    if argumentFromUser == listdataclear[i]:
+        print("Game over, number exists yet, make new attempt")
+        exit()
+
+randomNumber = random.randint(0, 100)
+print(f"random number from computer: {randomNumber}")
+
+if argumentFromUser == randomNumber:
+    print("You win! Get your 100r!")
+else:
+    print("Try again...")
+    wrfile.writeDataInFile(filename, argumentFromUser)
+"""
 
 #for test
 #numberFromUser = int(input("Input your number>")) #input number
@@ -88,3 +72,4 @@ print(f"Data from file (contentDataBase): {databaseContent}")
 
 #test commit
 print("test commit")
+"""
